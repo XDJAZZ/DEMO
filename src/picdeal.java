@@ -18,30 +18,30 @@ import static java.io.FileDescriptor.out;
 public class picdeal {
     public static void main(String[] args) throws IOException {
         int dip1,dip2,dip3,dip4;
-        BufferedImage image = ImageIO.read(new File("d:\\one.png"));
+        BufferedImage image = ImageIO.read(new File("d:\\test.png"));
         int width = image.getWidth();
         int height = image.getHeight();
 
-//        //切角加边框
-//        BufferedImage rounded = setRadius(image, (width*34/100), 2, 2);
-//        ImageIO.write(rounded, "png", new File("d:\\one.png"));
+        //切角加边框
+        BufferedImage rounded = setRadius(image, (width*34/100), 2, 2);
+        ImageIO.write(rounded, "png", new File("d:\\two.png"));
 
        //判断是否有边角，就是判断四角的像素点
         //boolean isTransparent = true;
-        boolean isWhite = false;
-        dip1=image.getRGB(0,0);
-        dip2=image.getRGB(0,height-1);
-        dip3=image.getRGB(width-1,0);
-        dip4=image.getRGB(width-1,height-1);
-        //if(dip1!=-1||dip2!=-1||dip3!=-1||dip4!=-1){isTransparent = false;}
-        if(panduan((dip1&0xFFFFFF))&&panduan((dip2&0xFFFFFF))&&panduan((dip3&0xFFFFFF))&&panduan((dip4&0xFFFFFF))){
-            isWhite = true;
-        }
-        if(isWhite){
-            System.out.println("无边角图片");
-        }else{
-            System.out.println("有边角图片");
-        }
+//        boolean isWhite = false;
+//        dip1=image.getRGB(0,0);
+//        dip2=image.getRGB(0,height-1);
+//        dip3=image.getRGB(width-1,0);
+//        dip4=image.getRGB(width-1,height-1);
+//        //if(dip1!=-1||dip2!=-1||dip3!=-1||dip4!=-1){isTransparent = false;}
+//        if(panduan((dip1&0xFFFFFF))&&panduan((dip2&0xFFFFFF))&&panduan((dip3&0xFFFFFF))&&panduan((dip4&0xFFFFFF))){
+//            isWhite = true;
+//        }
+//        if(isWhite){
+//            System.out.println("无边角图片");
+//        }else{
+//            System.out.println("有边角图片");
+//        }
     }
 
 
